@@ -1,0 +1,10 @@
+name,energy_daily,cost,area_required,uses,company
+Tata Ghar Ghar Solar Basic,4.5,70000,80,Basic home loads (TV | lights | fans),Tata Power
+Tata Ghar Ghar Solar Standard,9,140000,160,Extended home use (lights | fans | fridge),Tata Power
+Tata Ghar Ghar Solar Premium,13.5,200000,240,Full home incl. AC | water pump,Tata Power
+Loom Solar 1kW Off-Grid Kit,4.5,72000,80,Basic home loads (TV | lights | fans),Loom Solar
+Loom Solar 3kW Hybrid System,13.5,195000,240,Full home including AC | fridge,Loom Solar
+Waaree 5kW Grid-Tied Kit,20,275000,400,Large home with high loads,Waaree Energies
+Vikram Solar Helios 10kW Rooftop,40,640000,800,Large family or small business,Vikram Solar
+Adani 30kW Commercial Rooftop,120,1320000,2400,Commercial building,Adani Solar
+RenewSys 150kW Industrial Utility Kit,600,3000000,10000,Large commercial/industrial site,RenewSys
