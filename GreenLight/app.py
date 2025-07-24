@@ -285,5 +285,5 @@ st.caption("Made with ❤️ for Code Green Challenge by Anshuman Verma | SDG 7 
 
 # ✅ Bottom Button
 st.markdown("""
-                <a href="#" class="bottom-btn">Back to home </a>
+                <a href="https://greenpillar.pythonanywhere.com" class="bottom-btn">Back to home </a>
             """, unsafe_allow_html=True)
