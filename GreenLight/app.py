@@ -48,7 +48,7 @@ def estimate_energy_emissions(floors, lighting, hvac, solar, panels, area, appli
     emissions = energy * 0.0007
     return round(energy, 2), round(emissions, 2)
 
-st.set_page_config(page_title="GreenSnap – Building Estimator", layout="centered")
+st.set_page_config(page_title="GreenLight – Building Estimator", layout="centered")
 
 st.markdown("""
 <style>
@@ -73,7 +73,6 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
-
 
 h1 {
     font-size: 2.5rem;
@@ -219,13 +218,34 @@ h1, h2, h3, h4 {
     overflow: hidden;
 }
 
-            
+/* Bottom Button Styling */
+.bottom-btn {
+    display: block;
+    width: fit-content;
+    margin: 30px auto 10px;
+    padding: 12px 24px;
+    background-color: #66bb6a;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 187, 106, 0.3);
+}
+
+.bottom-btn:hover {
+    background-color: #ffffff;
+    color: #388e3c;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(102, 187, 106, 0.4);
+}
 </style>
 """, unsafe_allow_html=True)
 
 st.title("GreenSnap – Building Energy Estimator")
 st.markdown("<h4 style='text-align: center;'>Estimate your building's energy consumption, emissions, and sustainability score.</h4>", unsafe_allow_html=True)
-
 
 building_type = st.selectbox("🏠 What type of building is it?", ["Residential", "Commercial", "Industrial", "Educational", "Hospital"])
 area = st.number_input("📐 Total floor area (in m²)", min_value=10, max_value=100000, step=10)
@@ -258,8 +278,12 @@ if st.button("Calculate"):
     else:
         st.warning("Consider optimizing energy usage and adopting greener practices.")
 
-# 👇 End form container
 st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("---")
 st.caption("Made with ❤️ for Code Green Challenge by Anshuman Verma | SDG 7 & SDG 13")
+
+# ✅ Bottom Button
+st.markdown("""
+                <a href="#" class="bottom-btn">Back to home </a>
+            """, unsafe_allow_html=True)
