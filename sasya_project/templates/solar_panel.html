@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Solar Panel Chooser
+{% endblock %}
+
+{% block content %}
+    <h1>Solar Panel Chooser</h1>
+
+    <form method="POST">
+        <label for="daily_energy" class="form-label">Energy Required Daily(in kWh):</label>
+        <input type="number" name="daily_energy" class="form-control">
+
+        <br>
+
+        <label for="budget" class="form-label">Budget:</label>
+        <input type="number" name="budget" class="form-control">
+
+        <br>
+
+        <label for="area_available">Area Available(in sq.ft):</label>        
+        <input type="number" name="area_available" class="form-control">
+
+        <br>
+
+        <button type="submit" class="btn btn-success">Get Suitable Plans</button>
+    </form>
+
+    <br>
+
+    {% if plans %}
+        <hr>
+        <br>
+        <h1>Suitable Plans</h1>
+        <h3>Specified Parameters:</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Energy Required Daily: {{energy_daily}}</li>
+            <li class="list-group-item">Budget: {{budget}}</li>
+            <li class="list-group-item">Area Available: {{area_available}}</li>
+        </ul>
+        <br>
+        <table class="table table-dark table-striped table-hover">
+            <thead>
+                <tr>
+                    <td>Plan Name</td>
+                    <td>Company</td>
+                    <td>Energy per day</td>
+                    <td>Cost</td>
+                    <td>Area Required</td>
+                    <td>Can Be Used For</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for plan in plans %}
+                    <tr>
+                        <td>{{plan.name}}</td>
+                        <td>{{plan.company}}</td>
+                        <td>{{plan.energy_daily}}</td>
+                        <td>{{plan.cost}}</td>
+                        <td>{{plan.area_required}}</td>
+                        <td>{{plan.uses}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
