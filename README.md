@@ -1,4 +1,4 @@
-# green-pillar
+# Green-pillar
 This project aims to help you explore and review sustainable options for buildings - ranging from solar panels to sustainability calculators.
 
 We have made 2 subprojects
