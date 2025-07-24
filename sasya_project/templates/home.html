@@ -3,3 +3,25 @@
 {% block title %}
     Home
 {% endblock %}
+
+{% block content %}
+    <div class="solar-panel-chooser text-center">
+        <h3>Solar Panel Plan Chooser</h3>
+        <img src="{{url_for('static', filename='img/solar_panel.png')}}" alt="solar panel" style="width: 20%;">
+        <br>
+        <br>
+        <p><b style="font-size: 1.2rem;">What it Does:</b><br>It helps you a pick a plan to setup solar panels based on parameters entered by you: <br><br>
+            <ul class="list-group">
+                <li class="list-group-item">Energy Required</li>
+                <li class="list-group-item">Budget</li>
+                <li class="list-group-item">Area Available</li>
+            </ul>
+        </p>
+    </div>
+    <hr>
+    <div class="green-building-tracker text-center">
+        <h3>GreenLight</h3>
+        <img src="{{url_for('static', filename='img/green_building.png')}}" alt="solar panel" style="width: 20%;">
+
+    </div>
+{% endblock %}
