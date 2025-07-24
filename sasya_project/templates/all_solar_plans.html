@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    All Solar Plans
+{% endblock %}
+
+{% block content %}
+    <h1>All Pre-Existing Solar Plans</h1>
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr>
+                <td>Plan Name</td>
+                <td>Company</td>
+                <td>Energy per day</td>
+                <td>Cost</td>
+                <td>Area Required</td>
+                <td>Can Be Used For</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for plan in plans %}
+                <tr>
+                    <td>{{plan.name}}</td>
+                    <td>{{plan.company}}</td>
+                    <td>{{plan.energy_daily}} kWh</td>
+                    <td>{{plan.cost}} rupees</td>
+                    <td>{{plan.area_required}} sq.ft</td>
+                    <td>{{plan.uses}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

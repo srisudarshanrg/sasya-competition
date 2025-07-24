@@ -5,23 +5,44 @@
 {% endblock %}
 
 {% block content %}
+    <div class="green-building-tracker text-center">
+        <h3>GreenLight</h3>
+        <img src="{{url_for('static', filename='img/green_building.png')}}" alt="solar panel" style="width: 20%;">
+        <br>
+        <br>
+        <b style="font-size: 1.2rem;">Features:</b>
+        <div class="text-start" style="margin-left: auto; margin-right: auto; width: 50%;">
+            <ul>
+                <li>Input parameters: number of floors, lighting type, HVAC usage, and amount of greenary and sustainable measures</li>
+                <li>Calculates estimated electricity usage </li>
+                <li>Outputs CO₂ emissions </li>
+                <li>Provides actionable tips to improve energy efficiency</li>
+                <li>Displays a sustainability score for quick impact visualization</li>
+            </ul>
+        </div>
+    </div>
+    <hr>
     <div class="solar-panel-chooser text-center">
         <h3>Solar Panel Plan Chooser</h3>
         <img src="{{url_for('static', filename='img/solar_panel.png')}}" alt="solar panel" style="width: 20%;">
         <br>
         <br>
-        <p><b style="font-size: 1.2rem;">What it Does:</b><br>It helps you a pick pre-existing plans to setup solar panels based on parameters entered by you: <br><br>
+        <p><b style="font-size: 1.2rem;">What it Does:</b><br>It helps you pick a pre-existing plans to setup solar panels based on parameters entered by you: <br>
             <ul class="list-group">
+                <li class="list-group-item"><h5>Parameters:</h5></li>
                 <li class="list-group-item">Energy Required</li>
                 <li class="list-group-item">Budget</li>
                 <li class="list-group-item">Area Available</li>
             </ul>
-        </p>
-    </div>
-    <hr>
-    <div class="green-building-tracker text-center">
-        <h3>GreenLight</h3>
-        <img src="{{url_for('static', filename='img/green_building.png')}}" alt="solar panel" style="width: 20%;">
+            <br>
 
+            <div class="text-start" style="margin-left: auto; margin-right: auto; width: 50%;">
+                <ul>
+                    <li>Helps you pick a pre-existing plan when building a new house</li>
+                    <li>It allows you to input the above parameters so that you can get a solar panel setup altered for you</li>
+                    <li>Includes wide-ranging plans from many companies, thus, helping you make a decision easier rather than exploring a vast ocean of options</li>
+                </ul>
+            </div>
+        </p>
     </div>
 {% endblock %}

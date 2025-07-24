@@ -6,6 +6,11 @@ from .models import SolarPlans
 def home():
     return render_template("home.html")
 
+@app.route("/all-solar-plans")
+def all_solar_plans():
+    plans = SolarPlans.query.filter_by().all()
+    return render_template("all_solar_plans.html", plans=plans)
+
 @app.route("/solar_panel", methods=["GET", "POST"])
 def solar_panel():
     if request.method == "POST":

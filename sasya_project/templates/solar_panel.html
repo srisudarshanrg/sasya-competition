@@ -7,6 +7,10 @@
 {% block content %}
     <h1>Solar Panel Plan Chooser</h1>
 
+    <a href="{{url_for('all_solar_plans')}}" class="btn btn-sm btn-primary">View All Plans</a>
+    <br>
+    <br>
+
     <form method="POST">
         <label for="energy_daily" class="form-label">Energy Required Daily(in kWh):</label>
         <input type="number" name="energy_daily" class="form-control">
