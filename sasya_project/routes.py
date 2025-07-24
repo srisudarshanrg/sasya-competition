@@ -19,13 +19,10 @@ def solar_panel():
 
         if energy_daily == None:
             query_energy_daily = 0
-            display_energy = "Not Specified"
         if budget == None:
             query_budget = 999999999999999999999999999999999999
-            display_budget = "Not Specified"
         if area_available == None:
             query_area_available = 1000000
-            display_area_available = "Not Specified"
         
         suitable_rows = SolarPlans.query.filter(SolarPlans.energy_daily >= float(query_energy_daily), SolarPlans.cost <= query_budget, SolarPlans.area_required <= query_area_available).all()   
 
