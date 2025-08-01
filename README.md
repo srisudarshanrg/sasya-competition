@@ -9,14 +9,17 @@ We have made 2 subprojects
 Link: https://greenlight-sasya.streamlit.app/
 
 ## Solar Panel Plan Chooser
-Link: https://greenpillar.pythonanywhere.com/
+Link: https://greenpillar.pythonanywhere.com/solar_panel
 
 
 ## Run Instructions
  - Download the files of the project from this link: [https://github.com/srisudarshanrg/sasya-competition](https://github.com/srisudarshanrg/sasya-competition)
  - Navigate to the root directory of the project.
- - Run the following commands in the terminal:
+ - Run the following commands in the terminal to access app locally:
 
     ```pip install -r requirements.txt```
-    
+
     ```python run.py```
+
+## Deployed Application Link
+Here is the deployed version of the application: [https://greenpillar.pythonanywhere.com/](https://greenpillar.pythonanywhere.com/)
