@@ -10,3 +10,13 @@ Link: https://greenlight-sasya.streamlit.app/
 
 ## Solar Panel Plan Chooser
 Link: https://greenpillar.pythonanywhere.com/
+
+
+## Run Instructions
+ - Download the files of the project from this link: [https://github.com/srisudarshanrg/sasya-competition](https://github.com/srisudarshanrg/sasya-competition)
+ - Navigate to the root directory of the project.
+ - Run the following commands in the terminal:
+
+    ```pip install -r requirements.txt```
+    
+    ```python run.py```
