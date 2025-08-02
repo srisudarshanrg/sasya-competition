@@ -23,3 +23,13 @@ Link: https://greenpillar.pythonanywhere.com/solar_panel
 
 ## Deployed Application Link
 Here is the deployed version of the application: [https://greenpillar.pythonanywhere.com/](https://greenpillar.pythonanywhere.com/)
+
+## Tools Used
+ - Python
+   - Flask
+   - Streamlit
+   - SQLAlchemy
+ - HTML, CSS, JS
+ - Frameworks:
+   - Bootstrap
+   - Chart.js

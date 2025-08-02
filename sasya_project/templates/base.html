@@ -29,6 +29,15 @@
         </div>
     </nav>
 
+    {% with msgs = get_flashed_messages(with_categories=True) %}
+        {% for category, msg in msgs %}
+            <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                {{msg}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="margin-top: 0;"></button>
+            </div>
+        {% endfor %}
+    {% endwith %}
+
     <div class="content">
         {% block content %}
             
