@@ -1,5 +1,6 @@
 import streamlit as st
 
+# Defining the values for the criterions in a function to calculate the sustainability score
 def calculate_score(floors, lighting, hvac, solar, panels, building_type, area, appliances, green_roof, rainwater, ventilation, wall_insulation, green_area):
     score = 100
     score -= floors * 1.5
@@ -35,6 +36,7 @@ def calculate_score(floors, lighting, hvac, solar, panels, building_type, area, 
 
     return max(0, min(score, 100))
 
+# Function to estimate energy usage and emissions of the values
 def estimate_energy_emissions(floors, lighting, hvac, solar, panels, area, appliances, wall_insulation, green_area):
     base_energy = area * 20
     lighting_factors = {"LED": 0.8, "CFL": 1.0, "Incandescent": 1.3, "Filament": 1.2}
@@ -48,8 +50,10 @@ def estimate_energy_emissions(floors, lighting, hvac, solar, panels, area, appli
     emissions = energy * 0.0007
     return round(energy, 2), round(emissions, 2)
 
+# Streamlit app setup
 st.set_page_config(page_title="GreenLight – Building Estimator", layout="centered")
 
+# Css
 st.markdown("""
 <style>
 body {
@@ -208,17 +212,15 @@ h1, h2, h3, h4 {
 
 .st-emotion-cache-8fjoqp {
     background-color: black;
-    border-radius: 50px;
+    border-radius: 20px;
     padding: 20px;
-    max-width: 700px;
-    width: 90%;
+    width: 2000px;
     margin: 0 auto;
     min-height: 800px;
     height: auto !important;
     overflow: hidden;
 }
 
-/* Bottom Button Styling */
 .bottom-btn {
     display: block;
     width: fit-content;
@@ -240,6 +242,9 @@ h1, h2, h3, h4 {
     color: #388e3c;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(102, 187, 106, 0.4);
+            
+.st-emotion-cache-8fjoqp {
+    width: 800px;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -247,6 +252,7 @@ h1, h2, h3, h4 {
 st.title("GreenSnap – Building Energy Estimator")
 st.markdown("<h4 style='text-align: center;'>Estimate your building's energy consumption, emissions, and sustainability score.</h4>", unsafe_allow_html=True)
 
+# defining the main container
 building_type = st.selectbox("🏠 What type of building is it?", ["Residential", "Commercial", "Industrial", "Educational", "Hospital"])
 area = st.number_input("📐 Total floor area (in m²)", min_value=10, max_value=100000, step=10)
 floors = st.number_input("🏢 Number of floors", min_value=1, max_value=1000)
@@ -261,10 +267,12 @@ rainwater = st.radio("💧 Is rainwater harvesting implemented?", ["Yes", "No"])
 ventilation = st.selectbox("🌬️ How often do you use natural ventilation?", ["Always", "Often", "Rarely", "Never"])
 wall_insulation = st.selectbox("🧱 Wall Insulation Quality", ["High", "Medium", "Low"])
 
+# calculating the sustainability score and energy usage
 if st.button("Calculate"):
     score = calculate_score(floors, lighting, hvac, solar, panels, building_type, area, appliances, green_roof, rainwater, ventilation, wall_insulation, green_area)
     energy, emissions = estimate_energy_emissions(floors, lighting, hvac, solar, panels, area, appliances, wall_insulation, green_area)
 
+# displaying the results
     st.markdown("### Results", unsafe_allow_html=True)
     st.write(f"Estimated Annual Energy Usage: **{energy} kWh**")
     st.write(f"Estimated Annual CO₂ Emissions: **{emissions} tons**")
@@ -283,7 +291,7 @@ st.markdown("</div>", unsafe_allow_html=True)
 st.markdown("---")
 st.caption("Made with ❤️ for Code Green Challenge by Anshuman Verma | SDG 7 & SDG 13")
 
-# ✅ Bottom Button
+
 st.markdown("""
                 <a href="https://greenpillar.pythonanywhere.com" class="bottom-btn">Back to home </a>
             """, unsafe_allow_html=True)
